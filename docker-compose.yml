@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  rabbitmq: # Deploys a rabbitq serv accessible from the web under the name rabbitmq
+    image: rabbitmq:3.9-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:25672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  web: # Container with fastAPI. It ref to rabbitmq as as host
+    build: .
+    container_name: fast_api
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
