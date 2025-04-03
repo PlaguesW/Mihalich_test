@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from typing import List
-from .rabbitmq import publish_message
+from ..rabbitmq import publish_message
 from ..models import ScanSessionCreate, AccessPointCreate, StationCreate
 
 router = APIRouter()
