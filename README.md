@@ -27,7 +27,7 @@
 ---
 
 ## Структура проекта
-
+```
 my_project/
 ├── app/
 │   ├── init.py
@@ -46,7 +46,7 @@ my_project/
 ├── docker-compose.yml
 ├── Dockerfile
 └── README.md
-
+```
 ---
 
 ## Установка и запуск
