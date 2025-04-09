@@ -15,4 +15,3 @@ def test_register_device_success():
     assert "status" in data
     assert data["status"] == "registered"
     assert "device_uid" in data  
-   

@@ -62,3 +62,10 @@ class ScanFile(Base):
     device_id = Column(Integer, ForeignKey("devices.id"), nullable=True)
     file_path = Column(String)
     uploaded_at = Column(DateTime)
+    
+    
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    hashed_password = Column(String)
