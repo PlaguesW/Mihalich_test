@@ -18,7 +18,7 @@ app.include_router(secret_routes.router, prefix="/api/v1")
 async def health():
     return {"status": "ok"}
 
-#* Initialize Rammit connection
+#* Initialize Rabbit connection
 @app.on_event("startup")
 async def startup_event():
     rabbit_init()
